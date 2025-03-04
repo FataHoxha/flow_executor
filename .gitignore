@@ -1,6 +1,10 @@
-# Ignore virtual environments
 venv/
 .env
+pyvenv.cfg
+__pycache__/
+*.pyc
 
-# Ignore database files
 db.sqlite3
+
+.DS_Store
+.idea

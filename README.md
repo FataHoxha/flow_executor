@@ -14,7 +14,7 @@ General info about the application:
 ### Clone the repository
 Clone the repository by running the following command:
 The instructions below vary depending on the way you have setup git on your machine.
-1. git clone https://github.com/fata/flow_processor.git
+1. `git clone https://github.com/FataHoxha/flow_processor.git`
 
 ### Create a virtual environment
 Within the repository folder, create a virtual environment, activate it, and install the required packages.
@@ -22,33 +22,33 @@ Within the repository folder, create a virtual environment, activate it, and ins
 
 2. Create the virtual environment: 
 
-   python -m venv <flow_processor_3.12>
+   `python -m venv <venv_flow_processor_3.12>`
 
 3. Activate the virtual environment:
 
-   source <flow_processor_3.12>/bin/activate 
+   `source <venv_flow_processor_3.12>/bin/activate `
 
 4. Install the packages required:
 
-    pip install -r requirements.txt
+    `pip install -r requirements.txt`
 
 
 ### Set up the database
 Set up the database by running the following commands:
-1. python manage.py migrate
+1. `python manage.py migrate`
 
 ### Set up the superuser account
 Set-up the superuser account so that you can log in the Django admin interface.
-1. python manage.py createsuperuser
+1. `python manage.py createsuperuser`
 2. Follow the prompts to set up the superuser account by providing a username, email address, and password.
 
 ### Import the data from the D0010 file
 The example files are located in the processor_app/input_file folder that they can be easily located to test the application.
 Import the data from the D0010 file by running the following command:
-1.  python manage.py process_file processor_app/input_file/DTC5259515123502080915D0010.uff
+1.  `python manage.py process_file processor_app/input_file/DTC5259515123502080915D0010.uff`
 
 If the file is processed successfully, you should see the following message:
-```Processed <N> lines```
+_"Processed 35 lines"_
 
 ### Start the server
 Finally run the server which will allow you to view the data in the Django admin interface.
@@ -64,15 +64,16 @@ Finally run the server which will allow you to view the data in the Django admin
 
 ### Run the Tests
 To run the tests, run the following command:
-1. python manage.py test processor_app
+1. `python manage.py test processor_app`
 
 
 
 ## Implementation Details
 ### Design Decisions
-The following design decisions were made during the implementation of the application:
+The following design decisions were made during the implementation of the application.
+
 The database models were designed to represent the information extracted from the D0010 file in a structured way.
-From the [reference site](https://www.electralink.co.uk/dtc-catalogue/) mentions that the objects are hierarchical: 
+From the reference site, [electralink](https://www.electralink.co.uk/dtc-catalogue/), it is mentioned that the objects are hierarchical: 
 with a FlowFile containing multiple MPANs, each MPAN containing multiple MeterReaders,
 and each MeterReader containing multiple Readings.
 With this in mind, the models were designed to reflect this hierarchy.

@@ -1,4 +1,4 @@
-# Flow Processor
+# Flow Executor
 
 This project is a simple Django application that processes a DTC file of type d0010, extract the information 
 related to MPAN, meter reader, readings and store them in a database. 

@@ -4,7 +4,6 @@ This project is a simple Django application that processes a DTC file of type d0
 related to MPAN, meter reader, readings and store them in a database. 
 In addition, the application allows those information to be viewed and searched through the django admin interface.
 
-Developed by: Fatbardha Hoxha for the interview at Kraken.
 
 ## Running the Application Locally
 General info about the application:
@@ -14,7 +13,7 @@ General info about the application:
 ### Clone the repository
 Clone the repository by running the following command:
 The instructions below vary depending on the way you have setup git on your machine.
-1. `git clone https://github.com/FataHoxha/flow_processor.git`
+1. `git clone https://github.com/FataHoxha/flow_executor.git`
 
 ### Create a virtual environment
 Within the repository folder, create a virtual environment, activate it, and install the required packages.
@@ -22,11 +21,11 @@ Within the repository folder, create a virtual environment, activate it, and ins
 
 2. Create the virtual environment: 
 
-   `python -m venv <venv_flow_processor_3.12>`
+   `python -m venv <venv_flow_executor_3.12>`
 
 3. Activate the virtual environment:
 
-   `source <venv_flow_processor_3.12>/bin/activate `
+   `source <venv_flow_executor_3.12>/bin/activate `
 
 4. Install the packages required:
 
@@ -43,9 +42,9 @@ Set-up the superuser account so that you can log in the Django admin interface.
 2. Follow the prompts to set up the superuser account by providing a username, email address, and password.
 
 ### Import the data from the D0010 file
-The example files are located in the processor_app/input_file folder that they can be easily located to test the application.
+The example files are located in the executor_app/input_file folder that they can be easily located to test the application.
 Import the data from the D0010 file by running the following command:
-1.  `python manage.py process_file processor_app/input_file/DTC5259515123502080915D0010.uff`
+1.  `python manage.py process_file executor_app/input_file/DTC5259515123502080915D0010.uff`
 
 If the file is processed successfully, you should see the following message:
 _"Processed 35 lines"_
@@ -64,7 +63,7 @@ Finally run the server which will allow you to view the data in the Django admin
 
 ### Run the Tests
 To run the tests, run the following command:
-1. `python manage.py test processor_app`
+1. `python manage.py test executor_app`
 
 
 
